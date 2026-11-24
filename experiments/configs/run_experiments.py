@@ -10,7 +10,7 @@ from pathlib import Path
 
 import psutil
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "experiments" / "raw-data"
 CHILD_ENV = {**os.environ, "PYTHONUTF8": "1"}   # tránh lỗi in tiếng Việt khi chuyển hướng stdout trên Windows
 
