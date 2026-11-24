@@ -1,6 +1,3 @@
-"""Ghi cấu hình máy + môi trường chạy -> experiments/raw-data/environment.json và in bảng Markdown để dán vào báo cáo.
-Chạy:  python experiments/env_info.py     (cần: pip install psutil)
-"""
 import json
 import platform
 import socket

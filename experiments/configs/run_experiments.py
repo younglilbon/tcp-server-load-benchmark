@@ -1,21 +1,3 @@
-"""Chạy thực nghiệm chính thức (TV4): mỗi mức Client x N lần lặp, đo CPU của Server.
-
-Cần: Python 3.9+, `pip install psutil`.
-Chạy từ thư mục gốc của repo:
-    python experiments/run_experiments.py                 # đúng cấu hình đề bài (1/10/50 Client x 3 lần, warm-up 5s, đo 20s)
-    python experiments/run_experiments.py --quick         # chạy thử nhanh để kiểm tra script (KHÔNG dùng số liệu này)
-    python experiments/run_experiments.py --overwrite     # xóa file kết quả cũ cùng tên rồi chạy lại
-
-Mỗi lần chạy: bật Server MỚI (process riêng) -> chạy src/load-generator/client.py -> lấy mẫu CPU -> tắt Server.
-Đầu ra trong experiments/raw-data/:
-    loadgen_c{N}_r{k}.csv          dữ liệu thô do Load Generator (TV3) ghi
-    loadgen_c{N}_r{k}.stdout.txt   phần tóm tắt Load Generator in ra màn hình
-    server_c{N}_r{k}.log           log của Server trong lần chạy đó
-    cpu_samples.csv                CPU lấy mẫu theo thời gian (Server, Load Generator, toàn hệ thống)
-    run_summary.csv                1 dòng / lần chạy
-Cửa sổ lấy mẫu CPU = từ giây (warm-up + 1) đến giây (warm-up + thời gian đo) kể từ lúc khởi động Load Generator,
-tức nằm trọn trong pha đo chính thức (bỏ 1 giây đầu pha đo để bù thời gian khởi động process).
-"""
 import argparse
 import csv
 import json
