@@ -1,14 +1,3 @@
-"""Bộ test QA (TV4) cho TCP Echo Server + Load Generator.
-
-Kiểm thử "hộp đen": Server được bật ở PROCESS RIÊNG (src/server/server.py) rồi test gửi dữ liệu qua socket thật,
-giống cách Load Generator làm. Test tự tắt Server khi xong và báo lỗi nếu Server bị crash.
-
-Chạy (từ thư mục gốc của repo):
-    python tests/test_qa_server.py            # chạy + ghi kết quả vào experiments/raw-data/test-results.txt
-    python -m unittest tests.test_qa_server -v
-
-Log phía Server trong lúc test: experiments/raw-data/qa-test-server.log
-"""
 import csv
 import json
 import random
