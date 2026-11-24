@@ -1,0 +1,15 @@
+{
+  "host": "127.0.0.1",
+  "port": 9000,
+  "client_levels": [1, 10, 50],
+  "repeats": 3,
+  "payload_bytes": 1024,
+  "warmup_s": 5,
+  "duration_s": 20,
+  "cooldown_s": 5,
+  "cpu_sample_interval_s": 0.5,
+  "server_script": "src/server/server.py",
+  "server_args": [],
+  "loadgen_script": "src/load-generator/client.py",
+  "loadgen_extra_args": []
+}
