@@ -1,0 +1,23 @@
+2026-11-24 21:35:13,612 INFO tcp_server: TCP echo server listening on 127.0.0.1:9000
+2026-11-24 21:35:14,260 INFO tcp_server: Client connected: 127.0.0.1:63093
+2026-11-24 21:35:14,276 INFO tcp_server: Client disconnected: 127.0.0.1:63093
+2026-11-24 21:35:14,361 INFO tcp_server: Client connected: 127.0.0.1:63095
+2026-11-24 21:35:14,361 INFO tcp_server: Client connected: 127.0.0.1:63102
+2026-11-24 21:35:14,361 INFO tcp_server: Client connected: 127.0.0.1:63096
+2026-11-24 21:35:14,362 INFO tcp_server: Client connected: 127.0.0.1:63101
+2026-11-24 21:35:14,362 INFO tcp_server: Client connected: 127.0.0.1:63100
+2026-11-24 21:35:14,363 INFO tcp_server: Client connected: 127.0.0.1:63094
+2026-11-24 21:35:14,364 INFO tcp_server: Client connected: 127.0.0.1:63103
+2026-11-24 21:35:14,865 INFO tcp_server: Client connected: 127.0.0.1:63098
+2026-11-24 21:35:14,866 INFO tcp_server: Client connected: 127.0.0.1:63097
+2026-11-24 21:35:14,867 INFO tcp_server: Client connected: 127.0.0.1:63099
+2026-11-24 21:35:39,357 INFO tcp_server: Client disconnected: 127.0.0.1:63102
+2026-11-24 21:35:39,357 INFO tcp_server: Client disconnected: 127.0.0.1:63095
+2026-11-24 21:35:39,357 INFO tcp_server: Client disconnected: 127.0.0.1:63101
+2026-11-24 21:35:39,357 INFO tcp_server: Client disconnected: 127.0.0.1:63097
+2026-11-24 21:35:39,357 INFO tcp_server: Client disconnected: 127.0.0.1:63100
+2026-11-24 21:35:39,357 INFO tcp_server: Client disconnected: 127.0.0.1:63099
+2026-11-24 21:35:39,357 INFO tcp_server: Client disconnected: 127.0.0.1:63094
+2026-11-24 21:35:39,357 INFO tcp_server: Client disconnected: 127.0.0.1:63096
+2026-11-24 21:35:39,357 INFO tcp_server: Client disconnected: 127.0.0.1:63103
+2026-11-24 21:35:39,358 INFO tcp_server: Client disconnected: 127.0.0.1:63098

@@ -1,0 +1,13 @@
+{
+  "os": "Windows 11 (10.0.26200)",
+  "machine": "AMD64",
+  "cpu_model": "12th Gen Intel(R) Core(TM) i5-12450HX",
+  "cpu_physical_cores": 8,
+  "cpu_logical_cores": 12,
+  "ram_gb": 23.7,
+  "python": "3.13.15",
+  "git_commit": "d8c613f",
+  "network": "loopback 127.0.0.1, Server và Load Generator cùng một máy",
+  "hostname": "DESKTOP-4S5K8L1",
+  "ghi_chu_thu_cong": "Ghi thêm: tên/đời máy, cắm sạc hay dùng pin, chế độ nguồn (High performance?), đã đóng app nền chưa"
+}

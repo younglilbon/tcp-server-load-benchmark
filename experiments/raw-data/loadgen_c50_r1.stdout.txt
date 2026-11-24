@@ -1,0 +1,6 @@
+Đã ghi C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\experiments\raw-data\loadgen_c50_r1.csv
+Pha đo: 514426 lần thử, 514426 thành công
+Throughput: 25721.30 request/giây
+Error rate: 0.00%
+Latency trung bình: 1.926 ms
+p95 latency: 4.063 ms

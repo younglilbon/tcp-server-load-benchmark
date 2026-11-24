@@ -1,0 +1,25 @@
+test_tc08_disconnect_in_the_middle_of_a_request (__main__.TestAbnormalDisconnect.test_tc08_disconnect_in_the_middle_of_a_request) ... ok
+test_tc09_abrupt_reset_rst (__main__.TestAbnormalDisconnect.test_tc09_abrupt_reset_rst) ... ok
+test_tc06_request_split_into_single_bytes (__main__.TestFraming.test_tc06_request_split_into_single_bytes) ... ok
+test_tc07_three_requests_in_one_send (__main__.TestFraming.test_tc07_three_requests_in_one_send) ... ok
+test_tc10a_invalid_json_gets_error_and_connection_continues (__main__.TestInvalidData.test_tc10a_invalid_json_gets_error_and_connection_continues) ... ok
+test_tc10b_missing_required_fields (__main__.TestInvalidData.test_tc10b_missing_required_fields) ... ok
+test_tc10c_empty_line_and_non_utf8_bytes (__main__.TestInvalidData.test_tc10c_empty_line_and_non_utf8_bytes) ... ok
+test_tc10d_random_binary_garbage_then_close (__main__.TestInvalidData.test_tc10d_random_binary_garbage_then_close) ... ok
+test_tc11_oversize_request_rejected (__main__.TestInvalidData.test_tc11_oversize_request_rejected) ... ok
+test_tc12_bad_client_does_not_affect_good_client (__main__.TestInvalidData.test_tc12_bad_client_does_not_affect_good_client) ... ok
+test_tc13_burst_of_60_bad_clients_then_recover (__main__.TestInvalidData.test_tc13_burst_of_60_bad_clients_then_recover) ... ok
+test_tc15_loadgen_1_client_all_ok (__main__.TestLoadGenerator.test_tc15_loadgen_1_client_all_ok) ... ok
+test_tc16_loadgen_10_clients_all_ok (__main__.TestLoadGenerator.test_tc16_loadgen_10_clients_all_ok) ... ok
+test_tc17_loadgen_records_errors_when_server_down (__main__.TestLoadGenerator.test_tc17_loadgen_records_errors_when_server_down) ... ok
+test_tc04_10_clients_concurrent (__main__.TestMultiClient.test_tc04_10_clients_concurrent) ... ok
+test_tc05_50_clients_concurrent (__main__.TestMultiClient.test_tc05_50_clients_concurrent) ... ok
+test_tc01_single_client_echo (__main__.TestSingleClient.test_tc01_single_client_echo) ... ok
+test_tc02_payload_1kb_exact_match (__main__.TestSingleClient.test_tc02_payload_1kb_exact_match) ... ok
+test_tc03_200_sequential_requests_one_connection (__main__.TestSingleClient.test_tc03_200_sequential_requests_one_connection) ... ok
+test_tc14_idle_connection_closed_after_timeout (__main__.TestTimeout.test_tc14_idle_connection_closed_after_timeout) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 11.527s
+
+OK

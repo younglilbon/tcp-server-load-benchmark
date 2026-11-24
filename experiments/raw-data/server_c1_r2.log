@@ -1,0 +1,5 @@
+2026-11-24 21:34:10,057 INFO tcp_server: TCP echo server listening on 127.0.0.1:9000
+2026-11-24 21:34:10,690 INFO tcp_server: Client connected: 127.0.0.1:63086
+2026-11-24 21:34:10,705 INFO tcp_server: Client disconnected: 127.0.0.1:63086
+2026-11-24 21:34:10,801 INFO tcp_server: Client connected: 127.0.0.1:63087
+2026-11-24 21:34:35,797 INFO tcp_server: Client disconnected: 127.0.0.1:63087

@@ -1,0 +1,511 @@
+2026-11-24 21:32:07,260 INFO tcp_server: TCP echo server listening on 127.0.0.1:65372
+2026-11-24 21:32:07,921 INFO tcp_server: Client connected: 127.0.0.1:65374
+2026-11-24 21:32:07,942 INFO tcp_server: Client disconnected: 127.0.0.1:65374
+2026-11-24 21:32:07,943 INFO tcp_server: Client connected: 127.0.0.1:65375
+2026-11-24 21:32:07,943 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:65375
+2026-11-24 21:32:07,943 INFO tcp_server: Client disconnected: 127.0.0.1:65375
+2026-11-24 21:32:08,244 INFO tcp_server: Client connected: 127.0.0.1:65376
+2026-11-24 21:32:08,257 INFO tcp_server: Client disconnected: 127.0.0.1:65376
+2026-11-24 21:32:08,258 INFO tcp_server: Client connected: 127.0.0.1:65377
+2026-11-24 21:32:08,574 INFO tcp_server: Client connected: 127.0.0.1:57693
+2026-11-24 21:32:08,574 INFO tcp_server: Client disconnected: 127.0.0.1:57693
+2026-11-24 21:32:08,574 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:65377
+2026-11-24 21:32:08,574 INFO tcp_server: Client disconnected: 127.0.0.1:65377
+2026-11-24 21:32:08,575 INFO tcp_server: Client connected: 127.0.0.1:57694
+2026-11-24 21:32:08,756 INFO tcp_server: Client disconnected: 127.0.0.1:57694
+2026-11-24 21:32:08,757 INFO tcp_server: Client connected: 127.0.0.1:57695
+2026-11-24 21:32:08,772 INFO tcp_server: Client disconnected: 127.0.0.1:57695
+2026-11-24 21:32:08,776 INFO tcp_server: Client connected: 127.0.0.1:57696
+2026-11-24 21:32:08,787 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57696
+2026-11-24 21:32:08,787 INFO tcp_server: Client disconnected: 127.0.0.1:57696
+2026-11-24 21:32:08,788 INFO tcp_server: Client connected: 127.0.0.1:57697
+2026-11-24 21:32:08,802 WARNING tcp_server: Rejected invalid request from 127.0.0.1:57697
+2026-11-24 21:32:08,802 WARNING tcp_server: Rejected invalid request from 127.0.0.1:57697
+2026-11-24 21:32:08,802 WARNING tcp_server: Rejected invalid request from 127.0.0.1:57697
+2026-11-24 21:32:08,802 WARNING tcp_server: Rejected invalid request from 127.0.0.1:57697
+2026-11-24 21:32:08,802 INFO tcp_server: Client disconnected: 127.0.0.1:57697
+2026-11-24 21:32:08,803 INFO tcp_server: Client connected: 127.0.0.1:57698
+2026-11-24 21:32:08,817 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57698
+2026-11-24 21:32:08,817 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57698
+2026-11-24 21:32:08,817 INFO tcp_server: Client disconnected: 127.0.0.1:57698
+2026-11-24 21:32:08,818 INFO tcp_server: Client connected: 127.0.0.1:57699
+2026-11-24 21:32:08,818 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57699
+2026-11-24 21:32:08,819 INFO tcp_server: Client connected: 127.0.0.1:57700
+2026-11-24 21:32:08,819 ERROR tcp_server: Socket error while handling client 127.0.0.1:57699
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 26, in handle
+    raw_request = self.rfile.readline(
+        self.server.max_request_bytes + 1  # type: ignore[attr-defined]
+    )
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 723, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2026-11-24 21:32:08,819 INFO tcp_server: Client connected: 127.0.0.1:57701
+2026-11-24 21:32:08,820 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57700
+2026-11-24 21:32:08,827 INFO tcp_server: Client disconnected: 127.0.0.1:57699
+2026-11-24 21:32:08,827 ERROR tcp_server: Socket error while handling client 127.0.0.1:57700
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 26, in handle
+    raw_request = self.rfile.readline(
+        self.server.max_request_bytes + 1  # type: ignore[attr-defined]
+    )
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 723, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2026-11-24 21:32:08,828 INFO tcp_server: Client disconnected: 127.0.0.1:57700
+2026-11-24 21:32:08,833 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57701
+2026-11-24 21:32:08,833 ERROR tcp_server: Socket error while handling client 127.0.0.1:57701
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 42, in handle
+    request = json.loads(raw_request.decode("utf-8"))
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xbb in position 0: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 44, in handle
+    self._send_error(None, "invalid_json", "Request must be valid UTF-8 JSON")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 66, in _send_error
+    self._send_json(
+    ~~~~~~~~~~~~~~~^
+        {"requestId": request_id, "error": {"code": code, "message": message}}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 72, in _send_json
+    self.wfile.write(encoded + b"\n")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python313\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2026-11-24 21:32:08,834 INFO tcp_server: Client connected: 127.0.0.1:57702
+2026-11-24 21:32:08,835 INFO tcp_server: Client disconnected: 127.0.0.1:57701
+2026-11-24 21:32:08,848 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57702
+2026-11-24 21:32:08,848 INFO tcp_server: Client disconnected: 127.0.0.1:57702
+2026-11-24 21:32:08,849 INFO tcp_server: Client connected: 127.0.0.1:57703
+2026-11-24 21:32:08,864 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57703
+2026-11-24 21:32:08,864 ERROR tcp_server: Socket error while handling client 127.0.0.1:57703
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 42, in handle
+    request = json.loads(raw_request.decode("utf-8"))
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf0 in position 0: invalid continuation byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 44, in handle
+    self._send_error(None, "invalid_json", "Request must be valid UTF-8 JSON")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 66, in _send_error
+    self._send_json(
+    ~~~~~~~~~~~~~~~^
+        {"requestId": request_id, "error": {"code": code, "message": message}}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 72, in _send_json
+    self.wfile.write(encoded + b"\n")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python313\Lib\socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2026-11-24 21:32:08,865 INFO tcp_server: Client disconnected: 127.0.0.1:57703
+2026-11-24 21:32:09,165 INFO tcp_server: Client connected: 127.0.0.1:57705
+2026-11-24 21:32:09,165 INFO tcp_server: Client disconnected: 127.0.0.1:57705
+2026-11-24 21:32:09,166 INFO tcp_server: Client connected: 127.0.0.1:57706
+2026-11-24 21:32:09,179 WARNING tcp_server: Rejected oversized request from 127.0.0.1:57706
+2026-11-24 21:32:09,179 INFO tcp_server: Client disconnected: 127.0.0.1:57706
+2026-11-24 21:32:09,179 INFO tcp_server: Client connected: 127.0.0.1:57707
+2026-11-24 21:32:09,194 INFO tcp_server: Client disconnected: 127.0.0.1:57707
+2026-11-24 21:32:09,195 INFO tcp_server: Client connected: 127.0.0.1:57708
+2026-11-24 21:32:09,210 INFO tcp_server: Client connected: 127.0.0.1:57709
+2026-11-24 21:32:09,226 INFO tcp_server: Client disconnected: 127.0.0.1:57709
+2026-11-24 21:32:09,226 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57708
+2026-11-24 21:32:09,226 INFO tcp_server: Client disconnected: 127.0.0.1:57708
+2026-11-24 21:32:09,230 INFO tcp_server: Client connected: 127.0.0.1:57710
+2026-11-24 21:32:09,231 INFO tcp_server: Client connected: 127.0.0.1:57711
+2026-11-24 21:32:09,231 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57711
+2026-11-24 21:32:09,231 INFO tcp_server: Client disconnected: 127.0.0.1:57711
+2026-11-24 21:32:09,231 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57710
+2026-11-24 21:32:09,231 INFO tcp_server: Client connected: 127.0.0.1:57712
+2026-11-24 21:32:09,231 ERROR tcp_server: Socket error while handling client 127.0.0.1:57710
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 26, in handle
+    raw_request = self.rfile.readline(
+        self.server.max_request_bytes + 1  # type: ignore[attr-defined]
+    )
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 723, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2026-11-24 21:32:09,232 INFO tcp_server: Client disconnected: 127.0.0.1:57710
+2026-11-24 21:32:09,232 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57712
+2026-11-24 21:32:09,232 INFO tcp_server: Client disconnected: 127.0.0.1:57712
+2026-11-24 21:32:09,232 INFO tcp_server: Client connected: 127.0.0.1:57713
+2026-11-24 21:32:09,233 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57713
+2026-11-24 21:32:09,233 INFO tcp_server: Client disconnected: 127.0.0.1:57713
+2026-11-24 21:32:09,233 INFO tcp_server: Client connected: 127.0.0.1:57714
+2026-11-24 21:32:09,233 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57714
+2026-11-24 21:32:09,233 INFO tcp_server: Client disconnected: 127.0.0.1:57714
+2026-11-24 21:32:09,233 INFO tcp_server: Client connected: 127.0.0.1:57715
+2026-11-24 21:32:09,233 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57715
+2026-11-24 21:32:09,234 INFO tcp_server: Client connected: 127.0.0.1:57716
+2026-11-24 21:32:09,234 INFO tcp_server: Client disconnected: 127.0.0.1:57715
+2026-11-24 21:32:09,234 INFO tcp_server: Client connected: 127.0.0.1:57717
+2026-11-24 21:32:09,234 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57716
+2026-11-24 21:32:09,234 INFO tcp_server: Client disconnected: 127.0.0.1:57716
+2026-11-24 21:32:09,234 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57717
+2026-11-24 21:32:09,234 INFO tcp_server: Client connected: 127.0.0.1:57718
+2026-11-24 21:32:09,234 ERROR tcp_server: Socket error while handling client 127.0.0.1:57717
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 26, in handle
+    raw_request = self.rfile.readline(
+        self.server.max_request_bytes + 1  # type: ignore[attr-defined]
+    )
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 723, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2026-11-24 21:32:09,235 INFO tcp_server: Client connected: 127.0.0.1:57723
+2026-11-24 21:32:09,235 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57718
+2026-11-24 21:32:09,235 INFO tcp_server: Client disconnected: 127.0.0.1:57717
+2026-11-24 21:32:09,235 INFO tcp_server: Client connected: 127.0.0.1:57722
+2026-11-24 21:32:09,235 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57723
+2026-11-24 21:32:09,236 INFO tcp_server: Client disconnected: 127.0.0.1:57718
+2026-11-24 21:32:09,236 INFO tcp_server: Client connected: 127.0.0.1:57727
+2026-11-24 21:32:09,236 INFO tcp_server: Client disconnected: 127.0.0.1:57723
+2026-11-24 21:32:09,236 INFO tcp_server: Client connected: 127.0.0.1:57730
+2026-11-24 21:32:09,236 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57722
+2026-11-24 21:32:09,237 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57727
+2026-11-24 21:32:09,237 INFO tcp_server: Client connected: 127.0.0.1:57733
+2026-11-24 21:32:09,237 INFO tcp_server: Client disconnected: 127.0.0.1:57722
+2026-11-24 21:32:09,237 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57730
+2026-11-24 21:32:09,237 INFO tcp_server: Client disconnected: 127.0.0.1:57727
+2026-11-24 21:32:09,237 INFO tcp_server: Client connected: 127.0.0.1:57736
+2026-11-24 21:32:09,237 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57733
+2026-11-24 21:32:09,237 INFO tcp_server: Client disconnected: 127.0.0.1:57730
+2026-11-24 21:32:09,238 INFO tcp_server: Client connected: 127.0.0.1:57738
+2026-11-24 21:32:09,238 INFO tcp_server: Client disconnected: 127.0.0.1:57733
+2026-11-24 21:32:09,238 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57736
+2026-11-24 21:32:09,238 INFO tcp_server: Client connected: 127.0.0.1:57742
+2026-11-24 21:32:09,238 INFO tcp_server: Client disconnected: 127.0.0.1:57736
+2026-11-24 21:32:09,239 INFO tcp_server: Client connected: 127.0.0.1:57743
+2026-11-24 21:32:09,239 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57738
+2026-11-24 21:32:09,239 INFO tcp_server: Client connected: 127.0.0.1:57747
+2026-11-24 21:32:09,239 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57742
+2026-11-24 21:32:09,239 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57743
+2026-11-24 21:32:09,239 ERROR tcp_server: Socket error while handling client 127.0.0.1:57738
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 26, in handle
+    raw_request = self.rfile.readline(
+        self.server.max_request_bytes + 1  # type: ignore[attr-defined]
+    )
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 723, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2026-11-24 21:32:09,239 INFO tcp_server: Client connected: 127.0.0.1:57752
+2026-11-24 21:32:09,239 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57747
+2026-11-24 21:32:09,239 ERROR tcp_server: Socket error while handling client 127.0.0.1:57742
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 26, in handle
+    raw_request = self.rfile.readline(
+        self.server.max_request_bytes + 1  # type: ignore[attr-defined]
+    )
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 723, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2026-11-24 21:32:09,239 INFO tcp_server: Client disconnected: 127.0.0.1:57743
+2026-11-24 21:32:09,240 INFO tcp_server: Client connected: 127.0.0.1:57755
+2026-11-24 21:32:09,240 INFO tcp_server: Client disconnected: 127.0.0.1:57738
+2026-11-24 21:32:09,240 INFO tcp_server: Client connected: 127.0.0.1:57754
+2026-11-24 21:32:09,241 INFO tcp_server: Client disconnected: 127.0.0.1:57747
+2026-11-24 21:32:09,241 INFO tcp_server: Client connected: 127.0.0.1:57762
+2026-11-24 21:32:09,241 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57752
+2026-11-24 21:32:09,242 INFO tcp_server: Client disconnected: 127.0.0.1:57742
+2026-11-24 21:32:09,242 INFO tcp_server: Client connected: 127.0.0.1:57763
+2026-11-24 21:32:09,243 INFO tcp_server: Client connected: 127.0.0.1:57766
+2026-11-24 21:32:09,243 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57754
+2026-11-24 21:32:09,243 INFO tcp_server: Client connected: 127.0.0.1:57769
+2026-11-24 21:32:09,243 INFO tcp_server: Client disconnected: 127.0.0.1:57752
+2026-11-24 21:32:09,243 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57762
+2026-11-24 21:32:09,244 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57763
+2026-11-24 21:32:09,244 INFO tcp_server: Client disconnected: 127.0.0.1:57754
+2026-11-24 21:32:09,244 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57766
+2026-11-24 21:32:09,244 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57769
+2026-11-24 21:32:09,245 ERROR tcp_server: Socket error while handling client 127.0.0.1:57762
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 26, in handle
+    raw_request = self.rfile.readline(
+        self.server.max_request_bytes + 1  # type: ignore[attr-defined]
+    )
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 723, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2026-11-24 21:32:09,245 INFO tcp_server: Client disconnected: 127.0.0.1:57763
+2026-11-24 21:32:09,245 INFO tcp_server: Client disconnected: 127.0.0.1:57766
+2026-11-24 21:32:09,245 INFO tcp_server: Client disconnected: 127.0.0.1:57769
+2026-11-24 21:32:09,246 INFO tcp_server: Client disconnected: 127.0.0.1:57762
+2026-11-24 21:32:09,256 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57755
+2026-11-24 21:32:09,256 INFO tcp_server: Client disconnected: 127.0.0.1:57755
+2026-11-24 21:32:09,748 INFO tcp_server: Client connected: 127.0.0.1:57731
+2026-11-24 21:32:09,748 INFO tcp_server: Client connected: 127.0.0.1:57721
+2026-11-24 21:32:09,749 INFO tcp_server: Client connected: 127.0.0.1:57748
+2026-11-24 21:32:09,749 INFO tcp_server: Client connected: 127.0.0.1:57757
+2026-11-24 21:32:09,749 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57757
+2026-11-24 21:32:09,749 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57721
+2026-11-24 21:32:09,749 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57748
+2026-11-24 21:32:09,749 INFO tcp_server: Client disconnected: 127.0.0.1:57757
+2026-11-24 21:32:09,749 INFO tcp_server: Client connected: 127.0.0.1:57761
+2026-11-24 21:32:09,750 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57748
+2026-11-24 21:32:09,750 INFO tcp_server: Client connected: 127.0.0.1:57759
+2026-11-24 21:32:09,750 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57761
+2026-11-24 21:32:09,750 INFO tcp_server: Client disconnected: 127.0.0.1:57748
+2026-11-24 21:32:09,750 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57721
+2026-11-24 21:32:09,750 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57759
+2026-11-24 21:32:09,750 INFO tcp_server: Client disconnected: 127.0.0.1:57761
+2026-11-24 21:32:09,751 INFO tcp_server: Client connected: 127.0.0.1:57726
+2026-11-24 21:32:09,751 INFO tcp_server: Client disconnected: 127.0.0.1:57721
+2026-11-24 21:32:09,751 INFO tcp_server: Client connected: 127.0.0.1:57753
+2026-11-24 21:32:09,751 INFO tcp_server: Client disconnected: 127.0.0.1:57759
+2026-11-24 21:32:09,751 INFO tcp_server: Client connected: 127.0.0.1:57719
+2026-11-24 21:32:09,751 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57726
+2026-11-24 21:32:09,751 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57753
+2026-11-24 21:32:09,752 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57719
+2026-11-24 21:32:09,752 INFO tcp_server: Client connected: 127.0.0.1:57735
+2026-11-24 21:32:09,752 INFO tcp_server: Client disconnected: 127.0.0.1:57726
+2026-11-24 21:32:09,752 INFO tcp_server: Client connected: 127.0.0.1:57724
+2026-11-24 21:32:09,752 INFO tcp_server: Client disconnected: 127.0.0.1:57753
+2026-11-24 21:32:09,752 INFO tcp_server: Client disconnected: 127.0.0.1:57719
+2026-11-24 21:32:09,752 INFO tcp_server: Client connected: 127.0.0.1:57734
+2026-11-24 21:32:09,752 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57735
+2026-11-24 21:32:09,752 INFO tcp_server: Client connected: 127.0.0.1:57720
+2026-11-24 21:32:09,752 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57724
+2026-11-24 21:32:09,753 INFO tcp_server: Client disconnected: 127.0.0.1:57735
+2026-11-24 21:32:09,753 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57734
+2026-11-24 21:32:09,753 INFO tcp_server: Client connected: 127.0.0.1:57737
+2026-11-24 21:32:09,753 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57720
+2026-11-24 21:32:09,753 ERROR tcp_server: Socket error while handling client 127.0.0.1:57724
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 26, in handle
+    raw_request = self.rfile.readline(
+        self.server.max_request_bytes + 1  # type: ignore[attr-defined]
+    )
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 723, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2026-11-24 21:32:09,753 INFO tcp_server: Client disconnected: 127.0.0.1:57734
+2026-11-24 21:32:09,753 INFO tcp_server: Client disconnected: 127.0.0.1:57720
+2026-11-24 21:32:09,753 INFO tcp_server: Client connected: 127.0.0.1:57741
+2026-11-24 21:32:09,753 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57737
+2026-11-24 21:32:09,754 INFO tcp_server: Client disconnected: 127.0.0.1:57724
+2026-11-24 21:32:09,754 INFO tcp_server: Client connected: 127.0.0.1:57732
+2026-11-24 21:32:09,754 INFO tcp_server: Client connected: 127.0.0.1:57764
+2026-11-24 21:32:09,754 INFO tcp_server: Client disconnected: 127.0.0.1:57737
+2026-11-24 21:32:09,754 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57741
+2026-11-24 21:32:09,754 INFO tcp_server: Client connected: 127.0.0.1:57744
+2026-11-24 21:32:09,755 INFO tcp_server: Client connected: 127.0.0.1:57729
+2026-11-24 21:32:09,755 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57732
+2026-11-24 21:32:09,755 INFO tcp_server: Client disconnected: 127.0.0.1:57741
+2026-11-24 21:32:09,755 INFO tcp_server: Client connected: 127.0.0.1:57745
+2026-11-24 21:32:09,755 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57764
+2026-11-24 21:32:09,755 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57744
+2026-11-24 21:32:09,755 INFO tcp_server: Client connected: 127.0.0.1:57768
+2026-11-24 21:32:09,755 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57729
+2026-11-24 21:32:09,755 INFO tcp_server: Client disconnected: 127.0.0.1:57732
+2026-11-24 21:32:09,755 INFO tcp_server: Client connected: 127.0.0.1:57725
+2026-11-24 21:32:09,755 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57745
+2026-11-24 21:32:09,755 INFO tcp_server: Client disconnected: 127.0.0.1:57764
+2026-11-24 21:32:09,756 INFO tcp_server: Client disconnected: 127.0.0.1:57744
+2026-11-24 21:32:09,756 INFO tcp_server: Client connected: 127.0.0.1:57749
+2026-11-24 21:32:09,756 INFO tcp_server: Client disconnected: 127.0.0.1:57729
+2026-11-24 21:32:09,756 INFO tcp_server: Client connected: 127.0.0.1:57750
+2026-11-24 21:32:09,756 WARNING tcp_server: Rejected invalid JSON from 127.0.0.1:57768
+2026-11-24 21:32:09,756 INFO tcp_server: Client connected: 127.0.0.1:57728
+2026-11-24 21:32:09,756 INFO tcp_server: Client disconnected: 127.0.0.1:57745
+2026-11-24 21:32:09,756 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57725
+2026-11-24 21:32:09,756 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57749
+2026-11-24 21:32:09,756 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57750
+2026-11-24 21:32:09,756 ERROR tcp_server: Socket error while handling client 127.0.0.1:57768
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\Downloads\tcp-server-load-benchmark\src\server\server.py", line 26, in handle
+    raw_request = self.rfile.readline(
+        self.server.max_request_bytes + 1  # type: ignore[attr-defined]
+    )
+  File "C:\Users\LENOVO\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 723, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2026-11-24 21:32:09,757 WARNING tcp_server: Rejected incomplete request from 127.0.0.1:57728
+2026-11-24 21:32:09,757 INFO tcp_server: Client disconnected: 127.0.0.1:57725
+2026-11-24 21:32:09,757 INFO tcp_server: Client disconnected: 127.0.0.1:57749
+2026-11-24 21:32:09,757 INFO tcp_server: Client disconnected: 127.0.0.1:57750
+2026-11-24 21:32:09,757 INFO tcp_server: Client disconnected: 127.0.0.1:57768
+2026-11-24 21:32:09,757 INFO tcp_server: Client disconnected: 127.0.0.1:57728
+2026-11-24 21:32:09,762 INFO tcp_server: Client disconnected unexpectedly: 127.0.0.1:57731
+2026-11-24 21:32:09,762 INFO tcp_server: Client disconnected: 127.0.0.1:57731
+2026-11-24 21:32:10,264 INFO tcp_server: Client connected: 127.0.0.1:57772
+2026-11-24 21:32:10,278 INFO tcp_server: Client disconnected: 127.0.0.1:57772
+2026-11-24 21:32:10,372 INFO tcp_server: Client connected: 127.0.0.1:57773
+2026-11-24 21:32:12,369 INFO tcp_server: Client disconnected: 127.0.0.1:57773
+2026-11-24 21:32:12,637 INFO tcp_server: Client connected: 127.0.0.1:57780
+2026-11-24 21:32:12,637 INFO tcp_server: Client connected: 127.0.0.1:57781
+2026-11-24 21:32:12,637 INFO tcp_server: Client connected: 127.0.0.1:57778
+2026-11-24 21:32:12,638 INFO tcp_server: Client connected: 127.0.0.1:57782
+2026-11-24 21:32:12,638 INFO tcp_server: Client connected: 127.0.0.1:57776
+2026-11-24 21:32:12,638 INFO tcp_server: Client connected: 127.0.0.1:57774
+2026-11-24 21:32:12,639 INFO tcp_server: Client connected: 127.0.0.1:57779
+2026-11-24 21:32:12,639 INFO tcp_server: Client connected: 127.0.0.1:57777
+2026-11-24 21:32:12,640 INFO tcp_server: Client connected: 127.0.0.1:57783
+2026-11-24 21:32:12,640 INFO tcp_server: Client connected: 127.0.0.1:57775
+2026-11-24 21:32:14,633 INFO tcp_server: Client disconnected: 127.0.0.1:57781
+2026-11-24 21:32:14,633 INFO tcp_server: Client disconnected: 127.0.0.1:57779
+2026-11-24 21:32:14,633 INFO tcp_server: Client disconnected: 127.0.0.1:57775
+2026-11-24 21:32:14,633 INFO tcp_server: Client disconnected: 127.0.0.1:57780
+2026-11-24 21:32:14,633 INFO tcp_server: Client disconnected: 127.0.0.1:57777
+2026-11-24 21:32:14,633 INFO tcp_server: Client disconnected: 127.0.0.1:57776
+2026-11-24 21:32:14,633 INFO tcp_server: Client disconnected: 127.0.0.1:57774
+2026-11-24 21:32:14,634 INFO tcp_server: Client disconnected: 127.0.0.1:57778
+2026-11-24 21:32:14,634 INFO tcp_server: Client disconnected: 127.0.0.1:57782
+2026-11-24 21:32:14,634 INFO tcp_server: Client disconnected: 127.0.0.1:57783
+2026-11-24 21:32:16,065 INFO tcp_server: Client connected: 127.0.0.1:57787
+2026-11-24 21:32:16,066 INFO tcp_server: Client connected: 127.0.0.1:57789
+2026-11-24 21:32:16,066 INFO tcp_server: Client connected: 127.0.0.1:57788
+2026-11-24 21:32:16,066 INFO tcp_server: Client connected: 127.0.0.1:57790
+2026-11-24 21:32:16,067 INFO tcp_server: Client connected: 127.0.0.1:57792
+2026-11-24 21:32:16,067 INFO tcp_server: Client connected: 127.0.0.1:57791
+2026-11-24 21:32:16,068 INFO tcp_server: Client connected: 127.0.0.1:57793
+2026-11-24 21:32:16,068 INFO tcp_server: Client connected: 127.0.0.1:57794
+2026-11-24 21:32:16,068 INFO tcp_server: Client connected: 127.0.0.1:57795
+2026-11-24 21:32:16,069 INFO tcp_server: Client connected: 127.0.0.1:57796
+2026-11-24 21:32:16,081 INFO tcp_server: Client disconnected: 127.0.0.1:57792
+2026-11-24 21:32:16,082 INFO tcp_server: Client disconnected: 127.0.0.1:57788
+2026-11-24 21:32:16,083 INFO tcp_server: Client disconnected: 127.0.0.1:57789
+2026-11-24 21:32:16,083 INFO tcp_server: Client disconnected: 127.0.0.1:57796
+2026-11-24 21:32:16,083 INFO tcp_server: Client disconnected: 127.0.0.1:57793
+2026-11-24 21:32:16,083 INFO tcp_server: Client disconnected: 127.0.0.1:57787
+2026-11-24 21:32:16,084 INFO tcp_server: Client disconnected: 127.0.0.1:57791
+2026-11-24 21:32:16,084 INFO tcp_server: Client disconnected: 127.0.0.1:57790
+2026-11-24 21:32:16,084 INFO tcp_server: Client disconnected: 127.0.0.1:57794
+2026-11-24 21:32:16,085 INFO tcp_server: Client disconnected: 127.0.0.1:57795
+2026-11-24 21:32:16,086 INFO tcp_server: Client connected: 127.0.0.1:57797
+2026-11-24 21:32:16,086 INFO tcp_server: Client connected: 127.0.0.1:57798
+2026-11-24 21:32:16,087 INFO tcp_server: Client connected: 127.0.0.1:57799
+2026-11-24 21:32:16,088 INFO tcp_server: Client connected: 127.0.0.1:57800
+2026-11-24 21:32:16,088 INFO tcp_server: Client connected: 127.0.0.1:57801
+2026-11-24 21:32:16,089 INFO tcp_server: Client connected: 127.0.0.1:57802
+2026-11-24 21:32:16,090 INFO tcp_server: Client connected: 127.0.0.1:57803
+2026-11-24 21:32:16,090 INFO tcp_server: Client connected: 127.0.0.1:57804
+2026-11-24 21:32:16,091 INFO tcp_server: Client connected: 127.0.0.1:57805
+2026-11-24 21:32:16,092 INFO tcp_server: Client connected: 127.0.0.1:57806
+2026-11-24 21:32:16,093 INFO tcp_server: Client connected: 127.0.0.1:57807
+2026-11-24 21:32:16,093 INFO tcp_server: Client connected: 127.0.0.1:57810
+2026-11-24 21:32:16,094 INFO tcp_server: Client connected: 127.0.0.1:57813
+2026-11-24 21:32:16,095 INFO tcp_server: Client connected: 127.0.0.1:57814
+2026-11-24 21:32:16,095 INFO tcp_server: Client connected: 127.0.0.1:57815
+2026-11-24 21:32:16,096 INFO tcp_server: Client connected: 127.0.0.1:57818
+2026-11-24 21:32:16,097 INFO tcp_server: Client connected: 127.0.0.1:57819
+2026-11-24 21:32:16,099 INFO tcp_server: Client connected: 127.0.0.1:57821
+2026-11-24 21:32:16,100 INFO tcp_server: Client connected: 127.0.0.1:57822
+2026-11-24 21:32:16,102 INFO tcp_server: Client connected: 127.0.0.1:57823
+2026-11-24 21:32:16,103 INFO tcp_server: Client connected: 127.0.0.1:57825
+2026-11-24 21:32:16,104 INFO tcp_server: Client connected: 127.0.0.1:57827
+2026-11-24 21:32:16,106 INFO tcp_server: Client connected: 127.0.0.1:57830
+2026-11-24 21:32:16,107 INFO tcp_server: Client connected: 127.0.0.1:57832
+2026-11-24 21:32:16,108 INFO tcp_server: Client connected: 127.0.0.1:57835
+2026-11-24 21:32:16,112 INFO tcp_server: Client connected: 127.0.0.1:57836
+2026-11-24 21:32:16,112 INFO tcp_server: Client connected: 127.0.0.1:57837
+2026-11-24 21:32:16,115 INFO tcp_server: Client connected: 127.0.0.1:57838
+2026-11-24 21:32:16,115 INFO tcp_server: Client connected: 127.0.0.1:57842
+2026-11-24 21:32:16,126 INFO tcp_server: Client disconnected: 127.0.0.1:57798
+2026-11-24 21:32:16,131 INFO tcp_server: Client disconnected: 127.0.0.1:57797
+2026-11-24 21:32:16,138 INFO tcp_server: Client disconnected: 127.0.0.1:57802
+2026-11-24 21:32:16,139 INFO tcp_server: Client disconnected: 127.0.0.1:57799
+2026-11-24 21:32:16,139 INFO tcp_server: Client disconnected: 127.0.0.1:57801
+2026-11-24 21:32:16,140 INFO tcp_server: Client disconnected: 127.0.0.1:57807
+2026-11-24 21:32:16,141 INFO tcp_server: Client disconnected: 127.0.0.1:57806
+2026-11-24 21:32:16,141 INFO tcp_server: Client disconnected: 127.0.0.1:57800
+2026-11-24 21:32:16,144 INFO tcp_server: Client disconnected: 127.0.0.1:57805
+2026-11-24 21:32:16,144 INFO tcp_server: Client disconnected: 127.0.0.1:57814
+2026-11-24 21:32:16,146 INFO tcp_server: Client disconnected: 127.0.0.1:57810
+2026-11-24 21:32:16,147 INFO tcp_server: Client disconnected: 127.0.0.1:57813
+2026-11-24 21:32:16,147 INFO tcp_server: Client disconnected: 127.0.0.1:57804
+2026-11-24 21:32:16,147 INFO tcp_server: Client disconnected: 127.0.0.1:57803
+2026-11-24 21:32:16,147 INFO tcp_server: Client disconnected: 127.0.0.1:57819
+2026-11-24 21:32:16,147 INFO tcp_server: Client disconnected: 127.0.0.1:57821
+2026-11-24 21:32:16,148 INFO tcp_server: Client disconnected: 127.0.0.1:57825
+2026-11-24 21:32:16,148 INFO tcp_server: Client disconnected: 127.0.0.1:57823
+2026-11-24 21:32:16,148 INFO tcp_server: Client disconnected: 127.0.0.1:57815
+2026-11-24 21:32:16,149 INFO tcp_server: Client disconnected: 127.0.0.1:57818
+2026-11-24 21:32:16,149 INFO tcp_server: Client disconnected: 127.0.0.1:57822
+2026-11-24 21:32:16,149 INFO tcp_server: Client disconnected: 127.0.0.1:57827
+2026-11-24 21:32:16,149 INFO tcp_server: Client disconnected: 127.0.0.1:57835
+2026-11-24 21:32:16,150 INFO tcp_server: Client disconnected: 127.0.0.1:57836
+2026-11-24 21:32:16,151 INFO tcp_server: Client disconnected: 127.0.0.1:57830
+2026-11-24 21:32:16,151 INFO tcp_server: Client disconnected: 127.0.0.1:57832
+2026-11-24 21:32:16,152 INFO tcp_server: Client disconnected: 127.0.0.1:57837
+2026-11-24 21:32:16,152 INFO tcp_server: Client disconnected: 127.0.0.1:57842
+2026-11-24 21:32:16,152 INFO tcp_server: Client disconnected: 127.0.0.1:57838
+2026-11-24 21:32:16,604 INFO tcp_server: Client connected: 127.0.0.1:57826
+2026-11-24 21:32:16,605 INFO tcp_server: Client connected: 127.0.0.1:57808
+2026-11-24 21:32:16,605 INFO tcp_server: Client connected: 127.0.0.1:57820
+2026-11-24 21:32:16,606 INFO tcp_server: Client connected: 127.0.0.1:57816
+2026-11-24 21:32:16,607 INFO tcp_server: Client connected: 127.0.0.1:57817
+2026-11-24 21:32:16,607 INFO tcp_server: Client connected: 127.0.0.1:57811
+2026-11-24 21:32:16,608 INFO tcp_server: Client connected: 127.0.0.1:57809
+2026-11-24 21:32:16,609 INFO tcp_server: Client connected: 127.0.0.1:57831
+2026-11-24 21:32:16,610 INFO tcp_server: Client connected: 127.0.0.1:57833
+2026-11-24 21:32:16,610 INFO tcp_server: Client connected: 127.0.0.1:57824
+2026-11-24 21:32:16,610 INFO tcp_server: Client connected: 127.0.0.1:57828
+2026-11-24 21:32:16,612 INFO tcp_server: Client connected: 127.0.0.1:57829
+2026-11-24 21:32:16,612 INFO tcp_server: Client connected: 127.0.0.1:57812
+2026-11-24 21:32:16,613 INFO tcp_server: Client connected: 127.0.0.1:57834
+2026-11-24 21:32:16,619 INFO tcp_server: Client connected: 127.0.0.1:57841
+2026-11-24 21:32:16,621 INFO tcp_server: Client connected: 127.0.0.1:57846
+2026-11-24 21:32:16,622 INFO tcp_server: Client connected: 127.0.0.1:57845
+2026-11-24 21:32:16,622 INFO tcp_server: Client connected: 127.0.0.1:57843
+2026-11-24 21:32:16,622 INFO tcp_server: Client connected: 127.0.0.1:57840
+2026-11-24 21:32:16,624 INFO tcp_server: Client connected: 127.0.0.1:57844
+2026-11-24 21:32:16,625 INFO tcp_server: Client connected: 127.0.0.1:57839
+2026-11-24 21:32:16,630 INFO tcp_server: Client disconnected: 127.0.0.1:57816
+2026-11-24 21:32:16,636 INFO tcp_server: Client disconnected: 127.0.0.1:57811
+2026-11-24 21:32:16,637 INFO tcp_server: Client disconnected: 127.0.0.1:57833
+2026-11-24 21:32:16,638 INFO tcp_server: Client disconnected: 127.0.0.1:57809
+2026-11-24 21:32:16,639 INFO tcp_server: Client disconnected: 127.0.0.1:57826
+2026-11-24 21:32:16,640 INFO tcp_server: Client disconnected: 127.0.0.1:57808
+2026-11-24 21:32:16,642 INFO tcp_server: Client disconnected: 127.0.0.1:57828
+2026-11-24 21:32:16,643 INFO tcp_server: Client disconnected: 127.0.0.1:57831
+2026-11-24 21:32:16,643 INFO tcp_server: Client disconnected: 127.0.0.1:57820
+2026-11-24 21:32:16,643 INFO tcp_server: Client disconnected: 127.0.0.1:57824
+2026-11-24 21:32:16,644 INFO tcp_server: Client disconnected: 127.0.0.1:57829
+2026-11-24 21:32:16,644 INFO tcp_server: Client disconnected: 127.0.0.1:57817
+2026-11-24 21:32:16,645 INFO tcp_server: Client disconnected: 127.0.0.1:57812
+2026-11-24 21:32:16,648 INFO tcp_server: Client disconnected: 127.0.0.1:57846
+2026-11-24 21:32:16,648 INFO tcp_server: Client disconnected: 127.0.0.1:57834
+2026-11-24 21:32:16,648 INFO tcp_server: Client disconnected: 127.0.0.1:57840
+2026-11-24 21:32:16,649 INFO tcp_server: Client disconnected: 127.0.0.1:57841
+2026-11-24 21:32:16,649 INFO tcp_server: Client disconnected: 127.0.0.1:57844
+2026-11-24 21:32:16,649 INFO tcp_server: Client disconnected: 127.0.0.1:57845
+2026-11-24 21:32:16,650 INFO tcp_server: Client disconnected: 127.0.0.1:57839
+2026-11-24 21:32:16,650 INFO tcp_server: Client disconnected: 127.0.0.1:57843
+2026-11-24 21:32:16,651 INFO tcp_server: Client connected: 127.0.0.1:57847
+2026-11-24 21:32:16,651 INFO tcp_server: Client disconnected: 127.0.0.1:57847
+2026-11-24 21:32:16,651 INFO tcp_server: Client connected: 127.0.0.1:57848
+2026-11-24 21:32:16,651 INFO tcp_server: Client disconnected: 127.0.0.1:57848
+2026-11-24 21:32:16,652 INFO tcp_server: Client connected: 127.0.0.1:57849
+2026-11-24 21:32:16,679 INFO tcp_server: Client disconnected: 127.0.0.1:57849
+2026-11-24 21:32:16,680 INFO tcp_server: Client connected: 127.0.0.1:57850
+2026-11-24 21:32:18,694 WARNING tcp_server: Client timed out: 127.0.0.1:57850
+2026-11-24 21:32:18,695 INFO tcp_server: Client disconnected: 127.0.0.1:57850
+2026-11-24 21:32:18,697 INFO tcp_server: Client connected: 127.0.0.1:57851
+2026-11-24 21:32:18,711 INFO tcp_server: Client disconnected: 127.0.0.1:57851
