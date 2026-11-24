@@ -115,7 +115,9 @@ def main():
         throughput_max=("throughput_req_s", "max"),
         error_rate_mean_pct=("error_rate_pct", "mean"),
         avg_latency_mean_ms=("avg_latency_ms", "mean"),
+        avg_latency_std_ms=("avg_latency_ms", "std"),
         p95_latency_mean_ms=("p95_latency_ms", "mean"),
+        p95_latency_std_ms=("p95_latency_ms", "std"),
     ).reset_index()
 
     summary_path = RAW / "run_summary.csv"
@@ -123,6 +125,7 @@ def main():
         cpu = pd.read_csv(summary_path)
         cpu_agg = cpu.groupby("clients").agg(
             cpu_server_process_avg_pct=("cpu_server_avg_pct", "mean"),
+            cpu_server_process_std_pct=("cpu_server_avg_pct", "std"),
             cpu_server_total_machine_avg_pct=("cpu_server_avg_pct_of_total", "mean"),
             cpu_server_process_max_avg_pct=("cpu_server_max_pct", "mean"),
             server_rss_avg_mb=("server_rss_mb", "mean"),
@@ -160,6 +163,68 @@ def main():
         ax.grid(True, alpha=0.3)
         fig.tight_layout()
         fig.savefig(FIG / "clients_vs_cpu.png", dpi=180)
+        plt.close(fig)
+
+        # Compare run-to-run latency variation and matched throughput/CPU runs.
+        fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+        latency_plots = [
+            ("avg_latency_mean_ms", "avg_latency_std_ms", "Average Latency"),
+            ("p95_latency_mean_ms", "p95_latency_std_ms", "p95 Latency"),
+        ]
+        for ax, (mean_col, std_col, label) in zip(axes, latency_plots):
+            ax.errorbar(
+                aggregate["clients"], aggregate[mean_col],
+                yerr=aggregate[std_col].fillna(0),
+                marker="o", capsize=5, linewidth=2,
+            )
+            ax.set(
+                title=f"{label} vs Concurrent Clients",
+                xlabel="Number of concurrent clients",
+                ylabel=f"{label} (ms)",
+            )
+            ax.set_xticks(aggregate["clients"])
+            ax.set_ylim(bottom=0)
+            ax.grid(True, alpha=0.3)
+        fig.tight_layout()
+        fig.savefig(FIG / "latency_by_clients.png", dpi=180)
+        plt.close(fig)
+
+        paired_runs = per_run.merge(
+            cpu[["clients", "run", "cpu_server_avg_pct"]],
+            on=["clients", "run"], validate="one_to_one",
+        )
+        fig, ax = plt.subplots(figsize=(8, 5))
+        ax.scatter(
+            paired_runs["cpu_server_avg_pct"], paired_runs["throughput_req_s"],
+            color="gray", alpha=0.55, label="Individual runs",
+        )
+        ax.plot(
+            aggregate["cpu_server_process_avg_pct"], aggregate["throughput_mean"],
+            color="black", linestyle="--", linewidth=1, zorder=1,
+        )
+        colors = plt.cm.viridis(np.linspace(0.15, 0.85, len(aggregate)))
+        for color, (_, row) in zip(colors, aggregate.iterrows()):
+            ax.errorbar(
+                row["cpu_server_process_avg_pct"], row["throughput_mean"],
+                xerr=row["cpu_server_process_std_pct"],
+                yerr=row["throughput_std"],
+                fmt="D", color=color, ecolor=color, capsize=4, zorder=2,
+                label=f"{int(row['clients'])} Client mean ± SD",
+            )
+            ax.annotate(
+                f"{int(row['clients'])} Client",
+                (row["cpu_server_process_avg_pct"], row["throughput_mean"]),
+                xytext=(6, 6), textcoords="offset points",
+            )
+        ax.set(
+            title="Throughput vs Server CPU by Client Load",
+            xlabel="Average server process CPU (%)",
+            ylabel="Throughput (requests/second)",
+        )
+        ax.grid(True, alpha=0.3)
+        ax.legend()
+        fig.tight_layout()
+        fig.savefig(FIG / "throughput_vs_cpu.png", dpi=180)
         plt.close(fig)
 
     # Text report for reproducible QA.

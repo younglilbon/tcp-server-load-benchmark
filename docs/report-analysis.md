@@ -39,7 +39,17 @@ Chỉ sử dụng các bản ghi có `phase = measure` trong từng file `loadge
 | 50 | 194.79 | 237.23 | 16.23 |
 CPU quy đổi trên tổng số logical cores được lấy từ cột `cpu_server_avg_pct_of_total` trong `per_run_summary.csv`; không đồng nhất chỉ số này với CPU tiến trình.
 
-### **3.4. Số lượng request**
+### **3.4. Average Latency và p95 Latency theo số Client**
+Biểu đồ thể hiện trung bình của từng chỉ số latency qua ba lần chạy tại mỗi mức tải. Thanh sai số biểu thị độ lệch chuẩn mẫu giữa ba lần chạy (sample standard deviation), không phải khoảng tin cậy.
+
+![Average Latency và p95 Latency theo số Client](../experiments/figures/latency_by_clients.png)
+
+### **3.5. Mối tương quan giữa Throughput và CPU Server**
+Mỗi điểm nhỏ biểu diễn một lần chạy; hình thoi và thanh sai số thể hiện trung bình cùng độ lệch chuẩn mẫu của Throughput và CPU tiến trình Server ở mức Client tương ứng. Các lượt chạy được ghép theo cùng `clients` và `run`.
+
+![Throughput theo CPU Server và mức tải Client](../experiments/figures/throughput_vs_cpu.png)
+
+### **3.6. Số lượng request**
 Trong 9 lượt chạy, tổng cộng có **4,392,852 request ở pha đo**. Cả 4,392,852 request đều có `status = ok`; không có request thất bại trong pha đo. Vì vậy, error rate tính theo các bản ghi CSV của pha đo là 0%.
 
 Trong dữ liệu warm-up có ghi nhận 3 `socket_error` ở lượt 50 Client lần 2 và 2 `socket_error` ở lượt 50 Client lần 3. Các lỗi warm-up này không thuộc pha đo chính thức và không được cộng vào error rate pha đo. Nên giữ thông tin này trong hồ sơ kiểm thử thay vì kết luận rằng toàn bộ quá trình không từng phát sinh lỗi.
@@ -62,6 +72,9 @@ CPU Server trung bình tăng từ 56.59% ở 1 Client lên 184.33% ở 10 Client
 
 ### **4.4. Độ ổn định giữa các lần chạy**
 Độ lệch chuẩn throughput là 1,717.76 req/s ở 1 Client, 415.17 req/s ở 10 Client và 162.73 req/s ở 50 Client. Mức 1 Client có độ dao động tương đối lớn hơn giữa ba lần chạy; mức 10 và 50 Client có kết quả throughput gần nhau hơn. Tuy nhiên, mỗi mức chỉ có ba lần lặp nên số lần chạy còn hạn chế để khẳng định độ ổn định dài hạn.
+
+### **4.5. Mối tương quan giữa Throughput và CPU**
+Khi tăng từ 1 lên 10 Client, CPU Server trung bình tăng từ 56.59% lên 184.33%, đồng thời Throughput tăng từ 20,621.08 lên 26,943.77 req/s. Tăng tiếp lên 50 Client làm CPU trung bình chỉ tăng nhẹ lên 194.79%, trong khi Throughput giảm còn 25,649.35 req/s. Như vậy, CPU tăng đi kèm với Throughput tăng trong khoảng 1–10 Client, nhưng xu hướng này không tiếp tục ở 50 Client; dữ liệu gợi ý Throughput đã gần vùng bão hòa trong các mức tải đã thử. Vì chỉ có ba lần chạy ở mỗi mức và Server/Load Generator cùng chạy trên một máy, quan sát này mô tả mối liên hệ trong thí nghiệm, không chứng minh quan hệ nhân quả.
 
 ## **5. Giới hạn thực nghiệm**
 1. **Server và Load Generator chạy cùng máy**: CPU hai tiến trình cạnh tranh tài nguyên. Nên thực hiện thêm phép đo trên hai máy riêng biệt hoặc dùng máy tạo tải độc lập để giảm ảnh hưởng này.
