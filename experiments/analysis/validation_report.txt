@@ -1,0 +1,12 @@
+VALIDATION REPORT - TV5
+CSV files analyzed: 9
+Client levels observed: [np.int64(1), np.int64(10), np.int64(50)]
+Expected client levels: [1, 10, 50]
+Total measured requests: 4392852
+Successful measured requests: 4392852
+Failed measured requests: 0
+Duplicate request identity rows: 0
+Latency mismatch rows (>0.01 ms): 0
+Successful rows with missing/negative latency: 0
+All expected client levels present: True
+Note: validation checks are based on exported CSV fields; they do not prove protocol conformance.
