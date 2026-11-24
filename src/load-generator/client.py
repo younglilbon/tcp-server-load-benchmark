@@ -94,3 +94,67 @@ def run_client(args, client_id, payload, run_id, barrier, clock):
                 received = time.perf_counter()
                 status = "ok" if valid else "response_mismatch"
             except TimeoutError:
+                status = "timeout"
+            except EOFError:
+                status = "disconnected"
+            except (ValueError, UnicodeError):
+                status = "invalid_response"
+            except OSError:
+                status = "socket_error"
+            event = sent if sent is not None else attempted
+            phase = "warmup" if event < measure_start else "measure"
+            latency = round((received - sent) * 1000, 3) if received is not None and sent is not None else None
+            rows.append((run_id, args.clients, client_id, request_id, phase,
+                         round((sent - start) * 1000, 3) if sent is not None else None,
+                         round((received - start) * 1000, 3) if received is not None else None,
+                         latency, status))
+            if status != "ok":
+                if connection is not None:
+                    connection.close()
+                    connection = None
+                time.sleep(0.05)
+    finally:
+        if connection is not None:
+            connection.close()
+    return rows
+
+
+def main():
+    args = parse_args()
+    run_id = uuid.uuid4().hex
+    payload = "A" * args.payload_bytes
+    clock = {}
+    def start_timer():
+        clock["start"] = time.perf_counter()
+    barrier = Barrier(args.clients, action=start_timer)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    attempts = 0
+    latencies = []
+    with args.output.open("x", newline="", encoding="utf-8") as output:
+        writer = csv.writer(output)
+        writer.writerow(CSV_FIELDS)
+        with ThreadPoolExecutor(max_workers=args.clients) as executor:
+            futures = [executor.submit(run_client, args, i, payload, run_id, barrier, clock)
+                       for i in range(1, args.clients + 1)]
+            for future in futures:
+                rows = future.result()
+                writer.writerows(rows)
+                for row in rows:
+                    if row[4] == "measure":
+                        attempts += 1
+                        if row[8] == "ok":
+                            latencies.append(row[7])
+    successes = len(latencies)
+    print(f"Da ghi {args.output}")
+    print(f"Pha do: {attempts} lan thu, {successes} thanh cong")
+    print(f"Throughput: {successes / args.duration:.2f} request/giay")
+    if attempts:
+        print(f"Error rate: {(attempts - successes) / attempts:.2%}")
+    if latencies:
+        latencies.sort()
+        print(f"Latency trung binh: {sum(latencies) / successes:.3f} ms")
+        print(f"p95 latency: {latencies[math.ceil(0.95 * successes) - 1]:.3f} ms")
+
+
+if __name__ == "__main__":
+    main()
